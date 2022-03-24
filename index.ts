@@ -14,7 +14,7 @@ app.get('/asteriskcheck', async (req: express.Request, res: express.Response) =>
         res.json({status: 400, message: "Asterisk Service is Down"});
         return;
     }
-
+    console.log(output.stdout);
     const split = output.stdout.split("\n");
     const info = {
         calls: split[split.length - 2].split(" ")[0],
