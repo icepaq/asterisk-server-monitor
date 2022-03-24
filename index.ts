@@ -1,7 +1,9 @@
 import express from "express"
 const exec = require('child-process-promise').exec;
+const cors = require('cors');
 
-const app = express()
+const app = express();
+app.use(cors());
 const port = 3001
 
 app.get('/asteriskcheck', async (req: express.Request, res: express.Response) => {
