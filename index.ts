@@ -14,6 +14,8 @@ app.get('/asteriskcheck', (req: express.Request, res: express.Response) => {
         return stdout;
     });
 
+    console.log(output);
+
     // const output = "Channel              Location             State   Application(Data)\n" +
     // "0 active channels\n" +
     // "0 active calls\n" +
