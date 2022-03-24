@@ -17,8 +17,8 @@ app.get('/asteriskcheck', async (req: express.Request, res: express.Response) =>
 
     const split = output.stdout.split("\n");
     const info = {
-        calls: split[2].split(" ")[0],
-        processed: split[3].split(" ")[0],
+        calls: split[split.length - 2].split(" ")[0],
+        processed: split[split.length - 1].split(" ")[0],
     }
 
     const message = "Asterisk Service is Running | " + info.calls + " active calls | " + info.processed + " calls processed";
